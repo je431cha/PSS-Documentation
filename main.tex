@@ -1,0 +1,147 @@
+%+================+
+%| DOCUMENT SETUP |
+%+================+
+
+% Set document class
+\documentclass[xcolor=dvipsnames,11pt,paper=a4paper]{report}
+
+% Include packages
+\include{format/packages}
+\include{format/python_code}
+
+%+----------------+
+%| Document style |
+%+----------------+
+
+% Set default font to sans-serif
+\renewcommand*{\familydefault}{\sfdefault}
+% Make monospaced font a little smaller to fit text size
+\let\tt\ttfamily
+\renewcommand*{\ttfamily}{\small\tt}
+
+% No horizontal paragraph indentation
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+% Don't reset footnote counter with each chapter
+\counterwithout{footnote}{chapter}
+
+% Line spacing
+\renewcommand{\baselinestretch}{1.5}
+
+% Space before itemize/enumerate
+\setlist[itemize]{topsep=-11pt}
+\setlist[enumerate]{topsep=-11pt}
+
+% Space after List of Figures etc.
+\setlength\cftaftertoctitleskip{12pt}
+\setlength\cftafterloftitleskip{12pt}
+\setlength\cftafterlottitleskip{12pt}
+
+% Set chapter style
+\titleformat{\chapter}{\Huge\bfseries}{\thechapter. }{0pt}{\Huge\bfseries}
+\titlespacing{\chapter}{0pt}{0pt}{20pt}
+\titlespacing{\section}{0pt}{12pt}{0pt}
+\titlespacing{\subsection}{0pt}{12pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{12pt}{0pt}
+
+% Set author and title
+\title{
+	\Huge\textbf{Praxissemester bei isys vision GmbH \& Co. KG}\\\vspace{20pt}
+	\huge{Bericht und Erfahrungen}
+}
+\author{
+	\begin{tabular}{l l}
+	Tom Georgi &
+	\href{mailto:Tom.Georgi@htwg-konstanz.de}{\texttt{Tom.Georgi@htwg-konstanz.de}}\\
+	&HTWG Konstanz\\
+	&Angewandte Informatik, 4. Semester
+	\end{tabular}
+}
+\date{01. September 2018 bis 28. Februar 2019}
+
+%+================+
+%| DOCUMENT START |
+%+================+
+\begin{document}
+\pagenumbering{gobble} % No page numbers for the introduction!
+
+%+------------+
+%| Title page |
+%+------------+
+\begin{titlepage}
+\begin{tabular}{l r}
+%\includegraphics[width=0.5\textwidth]{media/htwg.png} &
+%\includegraphics[width=0.5\textwidth]{media/isys.png}
+\end{tabular}
+{\let\newpage\relax\maketitle}
+\end{titlepage}
+
+%+----------+
+%| Abstract |
+%+----------+
+\begin{abstract}
+Dies ist ein Test
+\pagebreak
+\end{abstract}
+%+-------------------+
+%| Table of contents |
+%+-------------------+
+\tableofcontents
+\pagebreak
+
+%+-------------------+
+%| List of Listings, |
+%| List of Figures,  |
+%| List of Tables    |
+%+-------------------+
+\begingroup
+\let\clearpage\relax
+\lstlistoflistings
+\listoffigures
+\listoftables
+\endgroup
+\pagebreak
+
+%+---------+
+%| Vorwort |
+%+---------+
+%\pagenumbering{arabic} % turn page numbering on now
+%\setcounter{chapter}{-1} % Makes numbering start at 0, so ``real'' chapters start at 1.
+%\include{content/vorwort}
+
+\include{content/testfile}
+
+%+-----------+
+%| Kapitel 1 |
+%+-----------+
+%\include{content/ivs}
+
+
+%+-----------+
+%| Kapitel 2 |
+%+-----------+
+%\include{content/jira}
+
+
+%+-----------+
+%| Kapitel 3 |
+%+-----------+
+%\include{content/mikado}
+
+%+-----------+
+%|   Fazit   |
+%+-----------+
+%\include{content/fazit}
+
+%+--------------------------+
+%| Ehrenwörtliche Erklärung |
+%+--------------------------+
+%\include{content/erklaerung}
+
+
+%+==============+
+%| DOCUMENT END |
+%+==============+
+\end{document}
+
